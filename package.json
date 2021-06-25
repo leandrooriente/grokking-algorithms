@@ -1,0 +1,26 @@
+{
+  "name": "grokking-algorithms",
+  "version": "1.0.0",
+  "description": "Exercises from the Grokking Algorithms book",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandrooriente/grokking-algorithms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leandrooriente/grokking-algorithms/issues"
+  },
+  "homepage": "https://github.com/leandrooriente/grokking-algorithms#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "jest": "^27.0.5",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.4"
+  }
+}
