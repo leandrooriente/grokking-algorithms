@@ -1,5 +1,4 @@
 import { selectionSort } from "./selection-sort";
-
 describe("Selection Sort", () => {
   it("should return an ordered array of numbers", () => {
     expect(selectionSort([1, 2, 3])).toEqual([1, 2, 3]);

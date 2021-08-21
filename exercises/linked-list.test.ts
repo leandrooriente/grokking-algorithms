@@ -109,4 +109,61 @@ describe("Linked list", () => {
     expect(linkedList.get(-1)).toBeNull();
     expect(linkedList.get(999)).toBeNull();
   });
+
+  it("should set an item", () => {
+    const linkedList = new LinkedList();
+    linkedList.push(1);
+    linkedList.push(2);
+
+    expect(linkedList.get(0)).toEqual({
+      value: 1,
+      next: { value: 2, next: null },
+    });
+    expect(linkedList.get(1)).toEqual({ value: 2, next: null });
+
+    linkedList.set(0, 27);
+    linkedList.set(1, 10);
+
+    expect(linkedList.get(0)).toEqual({
+      value: 27,
+      next: { value: 10, next: null },
+    });
+    expect(linkedList.get(1)).toEqual({ value: 10, next: null });
+
+    expect(linkedList.set(999, 999)).toBeNull();
+  });
+
+  it("should insert an item", () => {
+    const linkedList = new LinkedList();
+    linkedList.push(1);
+    linkedList.push(2);
+
+    expect(linkedList.get(1)).toEqual({ value: 2, next: null });
+    expect(linkedList.length).toBe(2);
+
+    linkedList.insert(1, 27);
+
+    expect(linkedList.get(1)).toEqual({
+      value: 27,
+      next: { value: 2, next: null },
+    });
+
+    expect(linkedList.length).toBe(3);
+    expect(linkedList.insert(999, 999)).toBeNull();
+    expect(linkedList.length).toBe(3);
+
+    linkedList.insert(0, 0);
+
+    expect(linkedList.length).toBe(4);
+    expect(linkedList.get(0)).toEqual({
+      value: 0,
+      next: expect.objectContaining({ value: 1 }),
+    });
+
+    linkedList.insert(4, 100);
+
+    expect(linkedList.length).toBe(5);
+    expect(linkedList.tail).toEqual({ value: 100, next: null });
+    expect(linkedList.get(4)).toEqual({ value: 100, next: null });
+  });
 });
