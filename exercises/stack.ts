@@ -1,6 +1,6 @@
 import { LinkedList } from "./linked-list";
 
-export class Queue {
+export class Stack {
   storage: LinkedList<unknown>;
 
   constructor() {
@@ -12,14 +12,14 @@ export class Queue {
   }
 
   peek(): unknown {
-    return this.storage.head?.value;
+    return this.storage.tail?.value;
   }
 
   push(value: unknown) {
     this.storage.push(value);
   }
 
-  shift(): unknown {
-    return this.storage.shift()?.value;
+  pop(): unknown {
+    return this.storage.pop()?.value;
   }
 }
