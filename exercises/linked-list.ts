@@ -8,7 +8,6 @@ class NodeItem<T> {
 }
 
 export class LinkedList<T> {
-  list: NodeItem<T>[] = [];
   head: NodeItem<T> | null = null;
   tail: NodeItem<T> | null = null;
   length: number = 0;
@@ -59,6 +58,7 @@ export class LinkedList<T> {
       return undefined;
     }
 
+    const node = this.head;
     this.head = this.head.next;
     this.length--;
 
@@ -66,7 +66,7 @@ export class LinkedList<T> {
       this.tail = null;
     }
 
-    return this.head;
+    return node;
   }
 
   unshift(value: T) {
